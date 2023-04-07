@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="app.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" integrity="sha512-8J9B9VSpjEh+fyHkWwPIs60sNfTl0A/AdlSO27C/8e+GGB6O1U6hMjWfY2tpvUVm4x4ON3q4J/SgOG8pCNfdXw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>Sanim Khadgi</title>
+</head>
+
+
+<body>
+<header>
+    <a href="#" class="logo">SaNIM</a>
+   
+    <ul>
+        <li><a href="#" class="active">Home</a></li>
+        <li><a href="#">Projects</a></li>
+        <li><a href="#">Gallery</a></li>
+        <li><a href="#">Contact</a></li>
+        
+    </ul>
+</header>
+    <section>
+        <img src="trees.jpg" id="main" alt="">
+        <h2 id="text">NAMASTE!</h2>
+        
+        <a href="#" id="btn">Get in Touch</a>
+        <img src="moon.png" id="moon"alt=""> 
+    </section>
+    <div class="content">
+        <h2 id="Hello">Hello!</h2>
+        <p>I am Sanim, a web developer and tech enthusiast from Nepal. I love creating asthetic websites and learn how to include new different design approaches. <br>
+            <br>
+        Currently learning more JavaScripts and CSS to enhance my future projects with plans to create a dynamic webpage all with the help of Machine Learning. 
+        </p>
+        </div>
+
+    <div class="portfolio">
+        <h2> Portfolio</h2>
+            <h3>Undergraduate Degree | 2017-2022</h3>
+                <p> Coventry University | Softwarica College | Kathmandu</p>
+            <h3>High School Diploma | 2015-2017</h3>
+                <p>Prime College | Kathmandu
+            </p>
+    
+    <div class="experiences">
+        <h2>Experiences</h2>
+        <h3> Tech Central Pvt LTD | Hadigaun | 2021-2021</h3>
+        <p>Worked as site admin and content writer for the client. I was tasked to manage their wordpress site and create new contents while applying SEO tools to increase viewership</p>
+        <h3>Kalpa Biz Pvt Ltd | 2020 - Present</h3>
+        <p>Site admin/ Content Producer/ SEO manager for multiple different websites including, delete.wiki, bugerrecipes.com, novicereader.com and more. Created multiple helpful guides and added managed the webiste to help users with their accounts.</p>
+
+    </div>
+</div>
+<div class="marquee">
+    <h3>
+    <div class="marquee-wrapper">
+        <div class="langmarquee">
+        <span class="text-stroke-purple">नमस्ते</span>
+        <span >Hola</span> 
+        <span class="text-stroke-purple">Hello</span>
+        <span>Ciao</span>
+        <span class="text-stroke-purple">Bonjour</span> 
+        <span>こんにちは</span>
+        <span class="text-stroke-purple">नमस्ते</span>
+        <span >Hola</span> 
+        <span class="text-stroke-purple">Hello</span>
+        <span>Ciao</span>
+        <span class="text-stroke-purple">Bonjour</span> 
+        <span>こんにちは</span>
+        
+    </div> 
+    </div>
+</h3>
+</div>
+
+<div class="social-icons">
+    <a href="https://github.com/SanimKhadgi/" target="_blank"><i class="fab fa-github"></i></a>
+    <a id="eth" href="#"><i class="fab fa-ethereum"></i></a>
+    <div id="qr-code-container">
+      <img class="qr-code" src="eth_qr.jpg"   alt="QR Code">
+    </div>
+    <a href="https://www.linkedin.com/in/sanim-khadgi-1725b0184/" target="_blank"><i class="fab fa-linkedin"></i></a>
+  </div> 
+
+
+
+  <footer class="Copyright"> 
+    <p>Made with ♥ from Nepal</p>
+   
+    <p>&copy;Sanim Khadgi | 2023</p>
+  </footer>
+  
+
+    <script>
+      let moon = document.getElementById('moon');
+        window.addEventListener('scroll', function() {
+        let value = window.scrollY;
+        if (window.innerWidth <= 768) {
+            moon.style.top =  value*0.40 +'px';
+         } else {
+     moon.style.top = value * 0.55 + 'px';
+         }
+            text.style.paddingLeft = value * 10 + 'px';
+            Hello.style.paddingLeft=value*0.5+'px';
+            Hello.style.backgroundPosition = value * 0.1 + "px center";
+           
+        });
+
+    </script>
+</body>
+</html>
