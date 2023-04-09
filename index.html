@@ -12,8 +12,8 @@
 
 
 <body>
-<header>
-    <a href="#" class="logo">SaNIM</a>
+<header id="navbar">
+    <a href="#" class="logo">SANIM</a>
    
     <ul>
         <li><a href="#" class="active">Home</a></li>
@@ -95,21 +95,34 @@
   </footer>
   
 
-    <script>
-      let moon = document.getElementById('moon');
-        window.addEventListener('scroll', function() {
+  <script>
+    let moon = document.getElementById('moon');
+    let navBarHeight = document.getElementById('navbar').offsetHeight; 
+    window.addEventListener('scroll', function() {
         let value = window.scrollY;
-        if (window.innerWidth <= 768) {
-            moon.style.top =  value*0.40 +'px';
-         } else {
-     moon.style.top = value * 0.55 + 'px';
-         }
-            text.style.paddingLeft = value * 10 + 'px';
-            Hello.style.paddingLeft=value*0.5+'px';
-            Hello.style.backgroundPosition = value * 0.1 + "px center";
-           
-        });
+        if (value > navBarHeight) {
+            if (window.innerWidth <= 768) {
+                moon.style.top =  value*0.40 +'px';
+                text.style.paddingLeft = value * 0.42 + 'px';
+            } else {
+                moon.style.top = value * 0.40 + 'px';
+            }
+            text.style.paddingLeft = value * 0.50 + 'px';
+            Hello.style.paddingLeft=value*0.22+'px';
+            Hello.style.backgroundPosition = value * 40 + "px center";
+        }
 
-    </script>
+        navbar.classList.toggle('sticky', value > navbar.offsetHeight);
+
+if (value <= navbar.offsetHeight) {
+  moon.style.top = 2;
+  text.style.paddingLeft=0;
+
+
+  navbar.classList.remove('sticky');
+}
+    });
+</script>
+
 </body>
 </html>
