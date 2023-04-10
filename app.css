@@ -35,18 +35,16 @@ header {
     box-shadow: none;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     
-   
+    
   }
-
 
 
 #navbar {
   position: relative;
-  z-index: 1; /* make sure the navbar is on top of the pseudo-element */
   overflow: hidden;
-  background-color: rgb(11, 11, 11);
+  background: radial-gradient(circle at 24.1% 68.8%, rgb(50, 50, 50) 0%, rgb(0, 0, 0) 99.4%);
   
- 
+  
 }
 
 #navbar::before {
@@ -58,6 +56,7 @@ header {
   bottom: 0;
   z-index: -1; 
   backdrop-filter: blur(10px);
+ 
 
 
   
@@ -69,7 +68,9 @@ header {
   position: relative;
   z-index: 2; /* make sure the anchor tags and logo are on top of the pseudo-element */
   color: white;
+
 }
+
 
 #text {
     background-size: 200% 100%;
@@ -80,7 +81,7 @@ header {
     color: white;
     white-space: nowrap;
     font-size: 10.5vw;
-    z-index: 9;
+    z-index: 2;
    
 }
 
@@ -91,7 +92,7 @@ header .logo{
     color: black;
     font-weight: 700;
     text-decoration: none;
-    font-size: 2em ;
+    font-size:1.5em ;
     text-transform: uppercase;
     letter-spacing: 2px;
   
@@ -115,12 +116,17 @@ header ul li a{
     color: black;
     padding: 6px 15px;
     border-radius: 20px;
+    border: 1px solid transparent; 
+    
+   
+   
 }
 header ul li a:hover , header ul li a.active
 { 
-    border: 1px solid white;
-    background:black;
-    color: white
+  border: 1px solid white;
+    color:rgb(255, 252, 252);
+  
+   
 }
 
 
@@ -196,7 +202,7 @@ section img#moon{
     position: relative;
     margin-bottom: 30px;
     margin: 20px;
-    text-align: justify
+    text-align: justify;
    
 }
 .content h2{
@@ -212,6 +218,10 @@ section img#moon{
     padding: 20px 100px;
     font-weight: 1000;
     
+}
+.nav-links {
+  display: none;
+ 
 }
 
 .portfolio{
@@ -268,7 +278,8 @@ section img#moon{
     color: rgb(255, 255, 255);
     padding: 10px 50px 20px;
     margin-left: 30px;
-    line-height: 1.5em;
+    font-size:18px;
+    line-height: 2em;
     text-align: justify;
     
 }
@@ -321,40 +332,183 @@ section img#moon{
     color:white;
     margin-left: 20px;
 }
+header .hamburger {
+  display: none; 
+}
+
+
+@media screen and (min-width: 768px) {
+  .nav-links {
+    display: flex;
+    justify-content:space-between;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+  }
+
+ 
+
+  .nav-links li a {
+    color: #333;
+    text-decoration: none;
+  }
+}
+
+
+
+
+
 
 @media (max-width:767px){
 
+ 
   header .logo{
-    font-size: 2.5em;
+    font-size: 2em;
   }
     header {
         
-        flex-direction:column;
-        justify-content: center;
-        align-items: stretch;
-      }
-    
-      header .logo{
-        margin-bottom: 20px;
-        margin-left: 2.0em;
-      }
-    
-      ul {
-        
-        flex-direction: column;
-        justify-content: left;
-        align-items:center;
-        margin-left: 200px;
-        margin-top: -60px;
-     
-      }
-    
-      header ul li {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
 
-        margin: 10px 20px ;
-        text-align: center;
-        padding: 5px;
       }
+    
+   
+    header .hamburger {
+    
+    display: block; 
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 2;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size:1em;
+    padding: 20px;
+    transition: all 0.5s ease;
+    background-color: transparent;
+ 
+  
+}header .hamburger::before,
+header .hamburger::after {
+  z-index: 2;
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 2px;
+    background-color: white;
+    left: 0;
+    transition: all 0.2s ease-in-out;
+}
+
+header .hamburger::before {
+    top: 8px;
+}
+
+header .hamburger::after {
+    top: 16px;
+}
+
+header .hamburger.active::before {
+    transform: rotate(45deg);
+    transform: translateY(-50%) rotate(45deg);
+    transition: ease 0.2s ease-in-out;
+    top: 10px;
+    left: 5px;
+    overflow-y: hidden;
+}
+
+header .hamburger.active::after {
+  transition: ease 0.2s ease-in-out;
+    transform: rotate(-45deg);
+    top: 10px;
+    left: 5px;
+   
+}
+
+header .hamburger.close::before {
+    transform: translateY(-50%) rotate(45deg);
+    top: 10px;
+    left: 5px;
+
+}
+
+header .hamburger.close::after {
+    transform: translateY(50%) rotate(-45deg);
+    top: 10px;
+    left: 5px;
+    overflow-y: auto;
+   
+}
+header .hamburger.close {
+  transform: rotate(90deg);
+  z-index: 5;
+  
+}
+     header .nav-links {
+      background: radial-gradient(circle at 24.1% 68.8%, rgb(50, 50, 50) 0%, rgb(0, 0, 0) 99.4%);
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #333;
+    
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    overflow-y: auto; 
+    
+    
+}
+
+header .nav-links.active {
+    opacity: 1;
+    z-index: 4;
+}
+
+
+
+      header .nav-links li {
+        opacity: 0;
+        transform: translateY(-20px);
+        transition: all 0.5s ease;
+      }
+    
+      header .nav-links li a {
+        color: #fff;
+   
+      }
+    
+      header .nav-links.active {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        color: white;
+        
+        
+        
+      }
+        
+    
+      header .nav-links.active li {
+        opacity: 1;
+        transform: translateY(0);
+      
+      
+      }
+
+    
+      
+    
+
+  
 
       section img#moon{
         position: absolute;
@@ -369,16 +523,27 @@ section img#moon{
 
     .logo{
       padding:  0px 30px 0;
-      margin:20px 20px ;
-      margin-top: 20px;
+    
       
     }
-
+    #text {
+      background-size: 200% 100%;
+      background: radial-gradient(circle at 18.7% 37.8%, rgb(250, 250, 250) 0%, rgb(225, 234, 238) 90%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      position: absolute;
+      color: white;
+      white-space: nowrap;
+      font-size: 10.5vw;
+      z-index: 2;
+     
+  }
    
  .portfolio, .experiences{
-  font-size: 14px;
-  margin:0.7em;
-  padding: 0px;
+  font-size: 12px;
+  margin:1em;
+
+  
 
 
     }
@@ -388,15 +553,26 @@ section img#moon{
         margin-top: 60px;
         width: 200px;
         padding: 15px;
-    }
+        z-index: 3;
 
-  
+    }
  
     .content p{
         font-size: 20px;
         padding: 20px;
     }
-}
+
+
+    .portfolio h3{
+      font-size: 22px;
+    }
+    .portfolio h2{
+      font-size: 32px;
+     
+    }
+  
+    
+  }
 
 
     .marquee {

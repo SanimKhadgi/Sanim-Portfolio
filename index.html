@@ -13,15 +13,15 @@
 
 <body>
 <header id="navbar">
+    
     <a href="#" class="logo">SANIM</a>
-   
-    <ul>
+    <button class="hamburger">&#9776;</button>
+    <ul class="nav-links">
         <li><a href="#" class="active">Home</a></li>
         <li><a href="#">Projects</a></li>
         <li><a href="#">Gallery</a></li>
         <li><a href="#">Contact</a></li>
-        
-    </ul>
+      </ul>
 </header>
     <section>
         <img src="trees.jpg" id="main" alt="">
@@ -96,33 +96,44 @@
   
 
   <script>
-    let moon = document.getElementById('moon');
-    let navBarHeight = document.getElementById('navbar').offsetHeight; 
-    window.addEventListener('scroll', function() {
-        let value = window.scrollY;
-        if (value > navBarHeight) {
-            if (window.innerWidth <= 768) {
-                moon.style.top =  value*0.40 +'px';
-                text.style.paddingLeft = value * 0.42 + 'px';
-            } else {
-                moon.style.top = value * 0.40 + 'px';
-            }
-            text.style.paddingLeft = value * 0.50 + 'px';
-            Hello.style.paddingLeft=value*0.22+'px';
-            Hello.style.backgroundPosition = value * 40 + "px center";
-        }
+  let moon = document.getElementById('moon');
+let navbar = document.getElementById('navbar');
+let text = document.getElementById('text');
+let Hello = document.getElementById('Hello');
+let navBarHeight = navbar.offsetHeight; 
+let hamburger = document.querySelector('.hamburger');
+let navLinks = document.querySelector('.nav-links');
 
-        navbar.classList.toggle('sticky', value > navbar.offsetHeight);
+hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('close');
+  navLinks.classList.toggle('active');
 
-if (value <= navbar.offsetHeight) {
-  moon.style.top = 2;
-  text.style.paddingLeft=0;
+});
 
+window.addEventListener('scroll', function() {
+  let value = window.scrollY;
+  if (value > navBarHeight) {
+    if (window.innerWidth <= 768) {
+      moon.style.top =  value*0.40 +'px';
+      text.style.paddingLeft = value * 0.42 + 'px';
+    } else {
+      moon.style.top = value * 0.40 + 'px';
+    }
+    text.style.paddingLeft = value * 0.50 + 'px';
+    Hello.style.paddingLeft = value * 0.22 + 'px';
+    Hello.style.backgroundPosition = value * 40 + "px center";
+  }
 
-  navbar.classList.remove('sticky');
-}
-    });
-</script>
+  navbar.classList.toggle('sticky', value > navbar.offsetHeight);
+
+  if (value <= navbar.offsetHeight) {
+    moon.style.top = 2;
+    text.style.paddingLeft = 0;
+    navbar.classList.remove('sticky');
+  }
+});
+  </script>
+
 
 </body>
 </html>
