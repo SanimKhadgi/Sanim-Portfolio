@@ -353,6 +353,9 @@ header .hamburger {
     color: #333;
     text-decoration: none;
   }
+
+
+  
 }
 
 
@@ -514,6 +517,7 @@ header .nav-links.active {
       
       
       }
+      
 
     
       
@@ -584,6 +588,8 @@ header .nav-links.active {
       font-size: 32px;
      
     }
+
+    
   
   }
 
@@ -683,7 +689,7 @@ header .nav-links.active {
           }
       
           .social-icons a {
-            margin: 0 50px;
+            margin: 0 40px;
             font-size: 24px;
             color: #000;
             z-index: 2;
@@ -701,7 +707,7 @@ header .nav-links.active {
             transition: all  0.5s ease;
             position: absolute;
             top: -65px;
-            left: -80px;
+            left: -65px;
             transform: translateX(-50%);
             background-color: #666;
             border-radius: 20px;
