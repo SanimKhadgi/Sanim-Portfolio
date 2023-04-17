@@ -35,15 +35,22 @@ header {
     box-shadow: none;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     
-    
+   
   }
 
 
 #navbar {
-  position: relative;
+  position: fixed;
   overflow: hidden;
-  background: radial-gradient(circle at 24.1% 68.8%, rgb(50, 50, 50) 0%, rgb(0, 0, 0) 99.4%);
+
   
+  top: 0;
+  width: 100%;
+  background-color: rgba(14, 14, 14, 0.5);
+  color: #fff;
+  padding: 10px;
+  left: 0;
+z-index: 2;
   
 }
 
@@ -66,7 +73,7 @@ header {
 
 #navbar a, #navbar .logo {
   position: relative;
-  z-index: 2; 
+   
   color: white;
 
 }
@@ -81,7 +88,7 @@ header {
     color: white;
     white-space: nowrap;
     font-size: 10.5vw;
-    z-index: 2;
+    
    
 }
 
@@ -166,6 +173,7 @@ section img#moon{
 }
 
 #btn{
+  position: relative;
     margin-top:4em;
     text-decoration: none;
     display: inline-block;
@@ -366,10 +374,24 @@ header .hamburger {
 @media (max-width:767px){
 
   
-
+  #navbar {
+    position: fixed;
+    overflow: hidden;
+  
+    
+    top: 0;
+    width: 100%;
+    background-color: rgba(14, 14, 14, 0.5);
+    color: #fff;
+    padding: 10px;
+    left: 0;
+  z-index: 3;
+    
+  }
  
   header .logo{
     font-size: 2em;
+
   }
 
     header {
@@ -377,7 +399,8 @@ header .hamburger {
         display: flex;
         justify-content: space-between;
         align-items: center;
-
+     
+     
       }
     
    
@@ -395,6 +418,8 @@ header .hamburger {
     padding: 20px;
     transition: all 0.5s ease;
     background-color: transparent;
+
+
  
   
 }
@@ -404,6 +429,7 @@ header .hamburger::before,
 header .hamburger::after {
 
   z-index: 2;
+  
     content: "";
     position: absolute;
     width: 30px;
@@ -423,6 +449,7 @@ header .hamburger::after {
 header .hamburger.active {
   visibility: hidden;
   opacity: 0;
+  
   transition: all 0.2s ease-in-out;
 }
 
@@ -454,7 +481,8 @@ header .hamburger.close::after {
     transform: translateY(50%) rotate(-45deg);
     top: 10px;
     left: 5px;
-    overflow-y: auto;
+    overflow-y: hidden;
+
    
 }
 header .hamburger.close {
@@ -462,23 +490,27 @@ header .hamburger.close {
   z-index: 5;
   
 }
-     header .nav-links {
-      background: radial-gradient(circle at 24.1% 68.8%, rgb(50, 50, 50) 0%, rgb(0, 0, 0) 99.4%);
-    position: fixed;
-    top: 0;
-    right: 0;
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #333;
-    opacity: 0;
-    transition: all 0.5s ease;
-    overflow-y: auto; 
-    
-    
+header .nav-links {
+  background: radial-gradient(circle at 24.1% 68.8%, rgb(50, 50, 50) 0%, rgb(0, 0, 0) 99.4%);
+position: fixed;
+top: 0;
+right: 0;
+height: 100vh;
+width: 100%;
+display: flex;
+justify-content: center;
+align-items: center;
+background-color: #333;
+opacity: 0;
+transition: all 0.5s ease;
+overflow-y: auto; 
+
 }
+
+
+
+
+
 
 header .nav-links.active {
     opacity: 1;
@@ -549,9 +581,8 @@ header .nav-links.active {
       position: absolute;
       color: white;
       white-space: nowrap;
-      font-size: 10.5vw;
-      z-index: 2;
-     
+      font-size: 15.5vw;
+      z-index: 0;
   }
    
  .portfolio, .experiences{
@@ -566,12 +597,13 @@ header .nav-links.active {
     margin-left: 20px;
     }
     #btn{
+      position: relative;
       font-size: 1.5em;
       text-align: center;
         margin-top: 60px;
         width: 200px;
         padding: 15px;
-        z-index: 3;
+   z-index: 2;
 
     }
  
@@ -692,7 +724,7 @@ header .nav-links.active {
             margin: 0 40px;
             font-size: 24px;
             color: #000;
-            z-index: 2;
+            z-index: 3;
           
           }
           #qr-code-container {
@@ -716,8 +748,26 @@ header .nav-links.active {
           #qr-code-container:hover .qr-code {
             opacity: 1;
           }
-         
-       
+
+        
+.animate {
+  opacity: 0;
+  transform: translateY(-50px);
+  animation: fadeIn 1s ease forwards;
+
+  ;
+}
+ 
 
 
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(-5);
+  }
+}

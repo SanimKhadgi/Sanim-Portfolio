@@ -1,5 +1,8 @@
 <!DOCTYPE html>
+
+
 <html lang="en">
+  
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,8 +15,8 @@
 
 
 <body>
-<header id="navbar">
-    
+<header id="navbar" >
+  
     <a href="#" class="logo">SANIM</a>
     <button  class="hamburger" data-toggle="collapse"></button>
     <ul class="nav-links">
@@ -23,11 +26,11 @@
         <li><a href="#">Contact</a></li>
       </ul>
 </header>
-    <section>
+    <section >
         <img src="trees.jpg" id="main" alt="">
-        <h2 id="text">NAMASTE!</h2>
+        <h2 id="text" class="animate">NAMASTE!</h2>
         
-        <a href="#" id="btn">Get in Touch</a>
+        <a href="#" id="btn" class="animate">Get in Touch</a>
         <img src="moon.png" id="moon"alt=""> 
     </section>
     <div class="content">
@@ -109,6 +112,10 @@ let navLinks = document.querySelector('.nav-links');
 hamburger.addEventListener('click', () => {
      hamburger.classList.toggle('close');
   navLinks.classList.toggle('active');
+  navLinks.classList.toggle('show-nav');
+  
+
+
 
 });
 
@@ -126,14 +133,38 @@ window.addEventListener('scroll', function() {
     Hello.style.backgroundPosition = value * 40 + "px center";
   }
 
-  navbar.classList.toggle('sticky', value > navbar.offsetHeight);
-
-  if (value <= navbar.offsetHeight) {
-    moon.style.top = 2;
-    text.style.paddingLeft = 0;
-    navbar.classList.remove('sticky');
-  }
+ 
 });
+
+navbar.classList.toggle('sticky', value > navbar.offsetHeight);
+
+if (value <= navbar.offsetHeight) {
+  moon.style.top = 2;
+  text.style.paddingLeft = 0;
+  navbar.classList.remove('sticky');
+}
+
+
+
+
+
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('animate-visible');
+    } else {
+      entry.target.classList.remove('animate-visible');
+    }
+  });
+});
+const animate = document.querySelectorAll('.animate');
+animate.forEach(elem => {
+  observer.observe(elem);
+});
+
+
+
   </script>
 
 
