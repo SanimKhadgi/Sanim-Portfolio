@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects</title>
+
+    <link rel="stylesheet" href="project.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://kit.fontawesome.com/2f6e1617ad.js" crossorigin="anonymous"></script>
+   
+
+    
+</head>
+<body>
+    
+<div id="cards">
+    <div class="card">
+      <div class="card-content">
+        <div class="card-image">
+            <i class="fa-regular fa-lemon"></i>
+        </div>
+        <div class="card-info-wrapper">
+          <div class="card-info">
+            <i class="fa-regular fa-lemon"></i>
+            <div class="card-info-title">
+              <h3>LIMETIME</h3>  
+              <h4>Watch the time with a hint of lime</h4>
+            </div>    
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-content">
+        <div class="card-image">
+          <i class="fas fa-shoe-prints"></i>
+        </div>
+        <div class="card-info-wrapper">
+          <div class="card-info">
+            <i class="fas fa-shoe-prints"></i>
+            <div class="card-info-title">
+              <h3>SHOELY</h3>  
+              <h4>Minimalistic Shoe Website design.</h4>
+            </div>    
+          </div>  
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-content">
+        <div class="card-image">
+            <i class="fa-solid fa-money-bill-wave"></i>
+        </div>
+        <div class="card-info-wrapper">
+          <div class="card-info">
+            <i class="fa-solid fa-money-bill-wave"></i>
+            <div class="card-info-title">
+              <h3>KURRENCY</h3>  
+              <h4>Pay Effortless.</h4>
+            </div>    
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-content">
+        <div class="card-image">
+            <i class="fa-solid fa-face-laugh-squint"></i>
+        </div>
+        <div class="card-info-wrapper">
+          <div class="card-info">
+            <i class="fa-solid fa-face-laugh-squint"></i>
+            <div class="card-info-title">
+              <h3>MEME BEAM</h3>  
+              <h4>Never gonna end the memes</h4>
+            </div>    
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-content">
+        <div class="card-image">
+            <i class="fa fa-qrcode"></i>
+        </div>
+        <div class="card-info-wrapper">
+          <div class="card-info">
+            <i class="fa fa-qrcode"></i>
+            <div class="card-info-title">
+              <h3>QUIRKY QR</h3>  
+              <h4>You get QR, you get a QR, everyones gets a QR</h4>
+            </div>    
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-content">
+        <div class="card-image">
+            <i class="fa fa-sqaurequestion"></i>
+        </div>
+        <div class="card-info-wrapper">
+          <div class="card-info">
+            <i class="fa-block-question"></i>
+            <div class="card-info-title">
+              <h3>Comming Soon</h3>  
+              <h4>You shall wait.</h4>
+            </div>    
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>document.getElementById("cards").onmousemove = e => {
+  for(const card of document.getElementsByClassName("card")) {
+    const rect = card.getBoundingClientRect(),
+          x = e.clientX - rect.left,
+          y = e.clientY - rect.top;
+
+    card.style.setProperty("--mouse-x", `${x}px`);
+    card.style.setProperty("--mouse-y", `${y}px`);
+  };
+}</script>
+  </div>
+    
+</body>
+</html>
+
+
+
+ 
