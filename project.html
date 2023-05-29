@@ -16,9 +16,9 @@
 <body>
     
 <div id="cards">
-    <div class="card">
+  <div class="card" onclick="openLimetime()">
       <div class="card-content">
-        <div class="card-image">
+        <div class="card-image"> 
             <i class="fa-regular fa-lemon"></i>
         </div>
         <div class="card-info-wrapper">
@@ -27,6 +27,7 @@
             <div class="card-info-title">
               <h3>LIMETIME</h3>  
               <h4>Watch the time with a hint of lime</h4>
+              
             </div>    
           </div>
         </div>
@@ -99,11 +100,12 @@
     <div class="card">
       <div class="card-content">
         <div class="card-image">
-            <i class="fa fa-sqaurequestion"></i>
+            <i class="fa fa-box"></i>
+            
         </div>
         <div class="card-info-wrapper">
           <div class="card-info">
-            <i class="fa-block-question"></i>
+            <i class="fa fa-box"></i>
             <div class="card-info-title">
               <h3>Comming Soon</h3>  
               <h4>You shall wait.</h4>
@@ -122,7 +124,12 @@
     card.style.setProperty("--mouse-x", `${x}px`);
     card.style.setProperty("--mouse-y", `${y}px`);
   };
-}</script>
+  
+}
+
+function openLimetime() {
+    window.location.href = 'limetime.html'}
+</script>
   </div>
     
 </body>
