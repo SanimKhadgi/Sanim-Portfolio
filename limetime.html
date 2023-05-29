@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Limetime</title>
+  <link rel="stylesheet" href="lime.css">
+  
+</head>
+<body>
+  <div class="container">
+    <h1>LIMETIME</h1>
+    <img src="lime.png" alt="lime" class="lime-image">
+
+
+    <h2>Current Time</h2>
+    <p id="current-time"></p>
+
+    <h2>24 HOUR FORMAT</h2>
+    <div id="clock"></div>
+
+    <h2>Time Zones</h2>
+    <div id="time-zones">
+      <div class="time-zone" data-offset="0" data-abbreviation="GMT">
+        <label>GMT:</label>
+        <span class="time"></span>
+        <span class="time-difference"></span>
+      </div>
+      <div class="time-zone" data-offset="-300" data-abbreviation="EST">
+        <label>EST:</label>
+        <span class="time"></span>
+        <span class="time-difference"></span>
+      </div>
+      <div class="time-zone" data-offset="60" data-abbreviation="BST">
+        <label>BST:</label>
+        <span class="time"></span>
+        <span class="time-difference"></span>
+      </div>
+      <div class="time-zone" data-offset="540" data-abbreviation="JST">
+        <label>JST:</label>
+        <span class="time"></span>
+        <span class="time-difference"></span>
+      </div>
+    </div>
+  </div>
+</body>
+<script>
+
+  function displayCurrentTime() {
+    var currentTime = new Date();
+    var timeElement = document.getElementById('current-time');
+    timeElement.innerHTML = currentTime.toLocaleTimeString('en-US', { hour12: true });
+  }
+
+  function convertTime() {
+    var currentTime = new Date();
+    var timeZones = document.getElementsByClassName('time-zone');
+    
+    for (var i = 0; i < timeZones.length; i++) {
+      var timeZoneElement = timeZones[i];
+      var timeZoneOffset = timeZoneElement.getAttribute('data-offset');
+      var timeZoneAbbreviation = timeZoneElement.getAttribute('data-abbreviation');
+      
+      var convertedTime = new Date(currentTime.getTime() + timeZoneOffset * 60 * 1000);
+      var hours = convertedTime.getHours() % 12 || 12; // Convert to 12-hour format
+      var minutes = convertedTime.getMinutes().toString().padStart(2, '0');
+      var seconds = convertedTime.getSeconds().toString().padStart(2, '0');
+      
+      var timeElement = timeZoneElement.getElementsByClassName('time')[0];
+      timeElement.innerHTML = hours + ':' + minutes + ':' + seconds + ' ' + timeZoneAbbreviation;
+      
+      var timeDifference = getTimeDifference(currentTime, convertedTime);
+      var timeDifferenceElement = timeZoneElement.getElementsByClassName('time-difference')[0];
+      timeDifferenceElement.innerHTML = 'Time Difference: ' + timeDifference;
+    }
+  }
+
+  function getTimeDifference(currentTime, convertedTime) {
+    var timeDifference = Math.abs((convertedTime.getTime() - currentTime.getTime()) / 1000); // in seconds
+    var hoursDifference = Math.floor(timeDifference / 3600);
+    var minutesDifference = Math.floor((timeDifference % 3600) / 60);
+    var secondsDifference = Math.floor(timeDifference % 60);
+    
+    return hoursDifference + 'h ' + minutesDifference + 'm ' + secondsDifference + 's';
+  }
+
+  function startClock() {
+    var clockElement = document.getElementById('clock');
+    var currentTime = new Date();
+    var hours = currentTime.getHours().toString().padStart(2, '0');
+    var minutes = currentTime.getMinutes().toString().padStart(2, '0');
+    var seconds = currentTime.getSeconds().toString().padStart(2, '0');
+    clockElement.innerHTML = hours + ':' + minutes + ':' + seconds;
+    setInterval(updateClock, 1000);
+  }
+
+  function updateClock() {
+    var clockElement = document.getElementById('clock');
+    var currentTime = new Date();
+    var hours = currentTime.getHours().toString().padStart(2, '0');
+    var minutes = currentTime.getMinutes().toString().padStart(2, '0');
+    var seconds = currentTime.getSeconds().toString().padStart(2, '0');
+    clockElement.innerHTML = hours + ':' + minutes + ':' + seconds;
+  }
+
+  setInterval(displayCurrentTime, 1000);
+  setInterval(convertTime, 1000);
+  window.addEventListener('load', startClock);
+
+  function createLimes() {
+  var numLimes = 50; // Adjust the number of limes as desired
+
+  for (var i = 0; i < numLimes; i++) {
+    var lime = document.createElement('img');
+    lime.src = 'lime.png';
+    lime.className = 'lime-image';
+
+    var randomX = Math.floor(Math.random() * (window.innerWidth - 100));
+    var randomY = Math.floor(Math.random() * (window.innerHeight - 100));
+
+    lime.style.left = randomX + 'px';
+    lime.style.top = randomY + 'px';
+    lime.style.animationDelay = Math.random() * 5 + 's'; // Add random animation delay
+
+    document.body.appendChild(lime);
+  }
+}
+
+window.addEventListener('DOMContentLoaded', createLimes);
+</script>
+</html>
