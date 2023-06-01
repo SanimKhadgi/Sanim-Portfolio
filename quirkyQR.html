@@ -86,7 +86,7 @@
         
         function generateQR(){
             if(qrtext.value.length > 0){
-            qrImage.src= "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=Example" + qrtext.value;
+            qrImage.src= "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=" + qrtext.value;
             imgBox.classList.add("show-img");
             labelCharElements[0].textContent = "";
             labelCharElements[1].textContent = "";
