@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="qr.css">
+    <title>Quirky QR</title>
+    
+</head>
+
+<body>
+
+
+    
+    <h1 class="hero">
+
+        <span class="white-text">QUIRKY</span>
+        <span class="space"></span>
+  <span class="black-text">QR</span>
+    
+    </h1>
+
+    <div class="qr-background">
+        <img src="qr-logo.png" alt="QR Logo" class="qr-logo" />
+      </div>
+  
+    <div class="container">
+         <div class="wave-group">
+        <input required="" type="text" class="input" id="qrtext">
+        <span class="bar"></span>
+        <label class="label">
+          <span class="label-char" style="--index: 0">P</span>
+          <span class="label-char" style="--index: 1">a</span>
+          <span class="label-char" style="--index: 2">s</span>
+          <span class="label-char" style="--index: 3">t</span>
+          <span class="label-char" style="--index: 4">e</span>
+          <span class="label-char" style="--index: 5">&nbsp</span>
+          <span class="label-char" style="--index: 6">H</span>
+          <span class="label-char" style="--index: 7">e</span>
+          <span class="label-char" style="--index: 8">r</span>
+          <span class="label-char" style="--index: 9">e</span>
+          <span class="label-char" style="--index: 10">!</span>
+        </label>
+       
+    </div>
+
+    
+    <div id="imgBox">   
+        <img src="" id="qrImage">
+
+    </div>
+
+
+    <button class = "button" onclick = "generateQR()">Quirkify
+        <div class="star-1">
+          <svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 784.11 815.53" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><defs></defs><g id="Layer_x0020_1"><metadata id="CorelCorpID_0Corel-Layer"></metadata><path d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z" class="fil0"></path></g></svg>
+        </div>
+        <div class="star-2">
+          <svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 784.11 815.53" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><defs></defs><g id="Layer_x0020_1"><metadata id="CorelCorpID_0Corel-Layer"></metadata><path d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z" class="fil0"></path></g></svg>
+        </div>
+        <div class="star-3">
+          <svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 784.11 815.53" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><defs></defs><g id="Layer_x0020_1"><metadata id="CorelCorpID_0Corel-Layer"></metadata><path d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z" class="fil0"></path></g></svg>
+        </div>
+        <div class="star-4">
+          <svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 784.11 815.53" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><defs></defs><g id="Layer_x0020_1"><metadata id="CorelCorpID_0Corel-Layer"></metadata><path d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z" class="fil0"></path></g></svg>
+        </div>
+        <div class="star-5">
+          <svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 784.11 815.53" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><defs></defs><g id="Layer_x0020_1"><metadata id="CorelCorpID_0Corel-Layer"></metadata><path d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z" class="fil0"></path></g></svg>
+        </div>
+        <div class="star-6">
+          <svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 784.11 815.53" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><defs></defs><g id="Layer_x0020_1"><metadata id="CorelCorpID_0Corel-Layer"></metadata><path d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z" class="fil0"></path></g></svg>
+        </div>
+      </button>
+      
+
+
+    </div>
+
+    <script>
+       
+        let imgBox=document.getElementById("imgBox");
+        let qrImage=document.getElementById("qrImage");
+        let qrtext=document.getElementById("qrtext");
+        let labelCharElements = document.getElementsByClassName("label-char");
+        
+        function generateQR(){
+            if(qrtext.value.length > 0){
+            qrImage.src= "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=Example" + qrtext.value;
+            imgBox.classList.add("show-img");
+            labelCharElements[0].textContent = "";
+            labelCharElements[1].textContent = "";
+            labelCharElements[2].textContent = "";
+            labelCharElements[3].textContent = "";
+            labelCharElements[4].textContent = "";
+            labelCharElements[5].textContent = "Scan Now!";
+            labelCharElements[6].textContent = "";
+            labelCharElements[7].textContent = "";
+            labelCharElements[8].textContent = "";
+            labelCharElements[9].textContent = "";
+            labelCharElements[10].textContent = "";
+            labelCharElements [11].textContent="";
+        }    
+        else{
+            qrtext.classList.add('error');
+            for (let i = 0; i < labelCharElements.length; i++) {
+      labelCharElements[i].classList.add('error');
+    }
+            setTimeout(()=>{
+                qr.text.classList.remove('error');
+                for (let i = 0; i < labelCharElements.length; i++) {
+        labelCharElements[i].classList.remove('error');
+       
+      }
+     
+    }, 1000);
+        }
+     }
+
+     const numQRLogos = 14; 
+const qrBackground = document.querySelector('.qr-background');
+
+for (let i = 0; i < numQRLogos; i++) {
+  const qrLogo = document.createElement('img');
+  qrLogo.src = 'qr-logo.png';
+  qrLogo.alt = 'QR Logo';
+  qrLogo.classList.add('qr-logo');
+  qrLogo.style.top = `${Math.random() * 100}%`;
+  qrLogo.style.left = `${Math.random() * 100}%`;
+  qrBackground.appendChild(qrLogo);
+}
+    
+    </script>
+
+
+    
+ 
+
+
+    
+</body>
+</html>
