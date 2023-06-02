@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEME BEAM</title>
+</head>
+<body>
+    <div class="splash">
+        <div class="splash-text">MOVE YOUR MOUSE TO BEAM THE MEMES</div>
+    </div>
+
+    <link rel="stylesheet" href="meme.css">
+    <img class="image" data-index="0" data-status="inactive" src="meme/frame1.jpg"/>
+    <img class="image" data-index="1" data-status="inactive" src="meme/frame2.jpg" />
+    <img class="image" data-index="2" data-status="inactive" src="meme/frame3.jpg" />
+    <img class="image" data-index="3" data-status="inactive" src="meme/frame4.jpg" />
+    <img class="image" data-index="4" data-status="inactive" src="meme/frame5.jpg" />
+    <img class="image" data-index="5" data-status="inactive" src="meme/frame6.jpg" />
+    <img class="image" data-index="6" data-status="inactive" src="meme/frame7.jpg" />
+    <img class="image" data-index="7" data-status="inactive" src="meme/frame8.jpg" />
+    <img class="image" data-index="8" data-status="inactive" src="meme/frame9.jpg" />
+    <img class="image" data-index="9" data-status="inactive" src="meme/frame10.jpg" />
+    <img class="image" data-index="10" data-status="inactive" src="meme/frame11.jpg" />
+    <img class="image" data-index="11" data-status="inactive" src="meme/frame12.jpg" />
+    <img class="image" data-index="12" data-status="inactive" src="meme/frame13.jpg" />
+    <img class="image" data-index="13" data-status="inactive" src="meme/frame14.jpg" />
+    <img class="image" data-index="14" data-status="inactive" src="meme/frame15.jpg" />
+    <img class="image" data-index="15" data-status="inactive" src="meme/frame16.jpg" />
+    <img class="image" data-index="16" data-status="inactive" src="meme/frame17.jpg" />
+    <img class="image" data-index="17" data-status="inactive" src="meme/frame18.jpg" />
+    <img class="image" data-index="18" data-status="inactive" src="meme/frame19.jpg" />
+    <img class="image" data-index="19" data-status="inactive" src="meme/frame20.jpg" />
+    
+    
+</body>
+
+<script>
+    const images = document.getElementsByClassName("image");
+    let globalIndex = 0,
+        last = { x: 0, y: 0 };
+
+    const activate = (image, x, y) => {
+        image.style.left = `${x}px`;
+        image.style.top = `${y}px`;
+        image.style.zIndex = globalIndex;
+
+        image.dataset.status = "active";
+
+        last = { x, y };
+    }
+
+    const distanceFromLast = (x, y) => {
+        return Math.hypot(x - last.x, y - last.y);
+    }
+
+    const handleOnMove = e => {
+        if (distanceFromLast(e.clientX, e.clientY) > window.innerWidth / 20) {
+            const lead = images[globalIndex % images.length],
+                tail = images[(globalIndex - 5) % images.length];
+
+            activate(lead, e.clientX, e.clientY);
+
+            if (tail) tail.dataset.status = "inactive";
+
+            globalIndex++;
+
+            const splashScreen = document.querySelector(".splash");
+            if (splashScreen) {
+                splashScreen.style.display = "none";
+            }
+            
+            for (let i = 0; i < images.length; i++) {
+                images[i].style.display = "block";
+            }
+        }
+    }
+    
+    window.onmousemove = e => handleOnMove(e);
+
+    window.ontouchmove = e => handleOnMove(e.touches[0]);
+</script>
+</html>
+
+
+
+
