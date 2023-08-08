@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Comic+Neue:wght@300&display=swap');
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom right, #1a1a1a, #000);
+    background-image: url("noise.png"); 
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+    font-family: Arial, sans-serif;
+}
+
+
+.horizontal-artboard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60vh; 
+    position: relative;
+}
+
+.podcast h2{ 
+    margin-top: 20px;
+    text-align: center;
+    font-size: 72px;
+    font-weight: bold;
+    font-family: 'Archivo Black', sans-serif;
+}
+.shoely h2{
+    margin-top: 20px;
+    text-align: center;
+    font-size: 72px;
+    font-weight: bold;
+    font-family: 'Archivo Black', sans-serif;
+
+}
+
+.neppay h2{
+    margin-top: 20px;
+    text-align: center;
+    font-size: 72px;
+    font-weight: bold;
+    font-family: 'Archivo Black', sans-serif;
+
+}
+
+
+.horizontal-artboard img {
+    
+    max-width: 100%;
+    max-height: 100%;
+}
+
+
+.ui-designs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+
+.ui-design {
+    width: 250px;
+    margin: 10px;
+    overflow: hidden;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.ui-design img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.2s ease;
+}
+
+.ui-design:hover img {
+    transform: scale(1.05);
+}
+
+.animated {
+    opacity: 0; 
+    animation: fade-in 2s forwards; /
+}
+
+
+@keyframes fade-in {
+    from {
+        opacity: 0; 
+        transform: translateY(-20px); 
+    }
+    to {
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
