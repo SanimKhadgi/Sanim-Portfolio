@@ -6,21 +6,43 @@
 </head>
 <body>
 
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-image" src="" alt="Enlarged Image">
+    </div>
+    <div class="Phone animated">
+        <h2 class="heading">Phone</h2>   
+    <div class="horizontal-artboard animated">
+        
+        <img src="ui\bphone\master.png" alt="Large Artboard" onclick="openLightbox('ui/bphone/master.png')">
+    </div>
+    <div class="ui-designs animated">
+        <div class="ui-design">
+            <img src="ui\bphone\home.png" alt="Design 1" onclick="openLightbox('ui/bphone/home.png')">
+        </div>
+        <div class="ui-design">
+            <img src="ui\bphone\watch.png" alt="Design 2" onclick="openLightbox('ui/bphone/watch.png')">
+        </div>
+        <div class="ui-design">
+            <img src="ui\bphone\catlogue.png" alt="Design 2" onclick="openLightbox('ui/bphone/catlogue.png')">
+        </div>
+    </div>
+</div>
+
     <div class="podcast animated">
         <h2 class="heading">PODCAST</h2>   
     <div class="horizontal-artboard animated">
         
-        <img src="ui\podcast\podcast.png" alt="Large Artboard">
+        <img src="ui\podcast\podcast.png" alt="Large Artboard" onclick="openLightbox('ui/podcast/podcast.png')">
     </div>
     <div class="ui-designs animated">
         <div class="ui-design">
-            <img src="ui\podcast\LOG.png" alt="Design 1">
+            <img src="ui\podcast\LOG.png" alt="Design 1" onclick="openLightbox('ui/podcast/LOG.png')">
         </div>
         <div class="ui-design">
-            <img src="ui\podcast\MENU.png" alt="Design 2">
+            <img src="ui\podcast\MENU.png" alt="Design 2" onclick="openLightbox('ui/podcast/MENU.png')">
         </div>
         <div class="ui-design">
-            <img src="ui\podcast\DARK.png" alt="Design 2">
+            <img src="ui\podcast\DARK.png" alt="Design 2" onclick="openLightbox('ui/podcast/DARK.png')">
         </div>
     </div>
 </div>
@@ -30,17 +52,17 @@
     <h2 class="heading">SHOELY</h2>   
 <div class="horizontal-artboard">
     
-    <img src="ui\shoely\shoely.png" alt="Large Artboard">
+    <img src="ui\shoely\shoely.png" alt="Large Artboard" onclick="openLightbox('ui/shoely/shoely.png')">
 </div>
 <div class="ui-designs animated">
     <div class="ui-design">
-        <img src="ui\shoely\login.png" alt="Design 1">
+        <img src="ui\shoely\login.png" alt="Design 1" onclick="openLightbox('ui/shoely/login.png')">
     </div>
     <div class="ui-design">
-        <img src="ui\shoely\dash.png" alt="Design 2">
+        <img src="ui\shoely\dash.png" alt="Design 2" onclick="openLightbox('ui/shoely/dash.png')">
     </div>
     <div class="ui-design">
-        <img src="ui\shoely\sample.png" alt="Design 2">
+        <img src="ui\shoely\sample.png" alt="Design 2"onclick="openLightbox('ui/shoely/sample.png')">
     </div>
 </div>
 </div>
@@ -49,21 +71,34 @@
     <h2 class="heading">NEPPAY</h2>   
 <div class="horizontal-artboard animated">
     
-    <img src="ui\neppay\neppay.png" alt="Large Artboard">
+    <img src="ui\neppay\neppay.png" alt="Large Artboard" onclick="openLightbox('ui/neppay/neppay.png')">
 </div>
 <div class="ui-designs">
     <div class="ui-design">
-        <img src="ui\neppay\registration.png" alt="Design 1">
+        <img src="ui\neppay\registration.png" alt="Design 1" onclick="openLightbox('ui/neppay/registration.png')">
     </div>
     <div class="ui-design">
-        <img src="ui\neppay\reg.png" alt="Design 2">
+        <img src="ui\neppay\reg.png" alt="Design 2" onclick="openLightbox('ui/neppay/reg.png')"> 
     </div>
     <div class="ui-design">
-        <img src="ui\neppay\nextreg.png" alt="Design 2">
+        <img src="ui\neppay\nextreg.png" alt="Design 2" onclick="openLightbox('ui/neppay/nextreg.png')">
     </div>
 </div>
 </div>
+<script>
+function openLightbox(imageSrc) {
+    const lightbox = document.getElementById("lightbox");
+    const image = document.getElementById("lightbox-image");
+    image.src = imageSrc;
+    lightbox.style.display = "block";
+}
 
+
+function closeLightbox() {
+    const lightbox = document.getElementById("lightbox");
+    lightbox.style.display = "none";
+}
+</script>
 
 
 
